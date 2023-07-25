@@ -15,7 +15,7 @@ class App extends StatelessWidget {
       theme: AppTheme.light,
       debugShowCheckedModeBanner: false,
       home: BlocProvider(
-        create: (context) => ItemCubit(apiRepository),
+        create: (context) => ItemCubit(),
         child: const MyHomePage(title: '',),
       ),
     );
