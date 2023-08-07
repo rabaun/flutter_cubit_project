@@ -12,6 +12,8 @@ class MyModel with _$MyModel {
     int? shop_id,
     String? name,
     String? description,
+    String? imgFull,
+    String? imgThumb,
     String? shop_description,
   }) = _MyModel;
 

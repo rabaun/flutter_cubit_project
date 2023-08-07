@@ -14,7 +14,7 @@ class ItemInitial extends ItemState {
 }
 
 class ItemStateUpdatedList extends ItemState {
-  const ItemStateUpdatedList({required this.model});
+  ItemStateUpdatedList({required this.model});
 
-  final Future<List<MyModel>?> model;
+  List<MyModel>? model;
 }

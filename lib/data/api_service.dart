@@ -1,22 +1,19 @@
-import 'package:http/http.dart' show Client;
+import 'package:dio/dio.dart';
 
 import 'models/model.dart';
 
 class ApiService {
-  Client client = Client();
-  final _baseUrl = "https://bonus.andreyp.ru/api/v1/";
+  final _baseGetUrl = "https://bonus.andreyp.ru/api/v1/promos?page=1&count=3";
+  List<MyModel>? model = [];
 
-  late final MyModel? model;
+  final dio = Dio();
 
-  Future<List<MyModel>?> baseGET() async {
-    final res = await client.get(Uri.parse(_baseUrl));
-    if (res.statusCode == 200) {
-      final result = (res.body[1][2] as List).map((e) {
-        return MyModel.fromJson(e);
-      }).toList();
-      model = result as MyModel?;
-      return result;
-    }
-    return null;
+  Future<List<MyModel>?> basGET() async {
+    final res = await dio.get(_baseGetUrl);
+    final data = res.data as Map<String, dynamic>;
+    model = (data["serverResponse"]['body']['promo']["list"] as List).map((e) {
+      return MyModel.fromJson(e);
+    }).toList();
+    return model;
   }
 }
