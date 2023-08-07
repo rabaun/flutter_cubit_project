@@ -6,12 +6,12 @@ import '../models/model.dart';
 import 'interface/api_repo.dart';
 
 class ApiRepositoryImpl extends ApiRepository {
-  List<MyModel>? model;
+  List<MyModel>? model = [];
   final _apiService = ApiService();
 
   @override
   Future<List<MyModel>?> baseGET() async {
-    final response = await _apiService.baseGET();
+    final response = await _apiService.basGET();
     if (response != null) {
       model = response;
     }

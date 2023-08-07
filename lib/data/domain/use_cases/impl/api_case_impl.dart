@@ -1,6 +1,5 @@
 import '../../../models/model.dart';
 import '../../../repositories/api_repo_impl.dart';
-import '../../../repositories/interface/api_repo.dart';
 import '../interfaces/api_case.dart';
 
 class ApiCaseImpl extends ApiCase {

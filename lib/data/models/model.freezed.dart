@@ -25,6 +25,8 @@ mixin _$MyModel {
   int? get shop_id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
+  String? get imgFull => throw _privateConstructorUsedError;
+  String? get imgThumb => throw _privateConstructorUsedError;
   String? get shop_description => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -43,6 +45,8 @@ abstract class $MyModelCopyWith<$Res> {
       int? shop_id,
       String? name,
       String? description,
+      String? imgFull,
+      String? imgThumb,
       String? shop_description});
 }
 
@@ -64,6 +68,8 @@ class _$MyModelCopyWithImpl<$Res, $Val extends MyModel>
     Object? shop_id = freezed,
     Object? name = freezed,
     Object? description = freezed,
+    Object? imgFull = freezed,
+    Object? imgThumb = freezed,
     Object? shop_description = freezed,
   }) {
     return _then(_value.copyWith(
@@ -87,6 +93,14 @@ class _$MyModelCopyWithImpl<$Res, $Val extends MyModel>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      imgFull: freezed == imgFull
+          ? _value.imgFull
+          : imgFull // ignore: cast_nullable_to_non_nullable
+              as String?,
+      imgThumb: freezed == imgThumb
+          ? _value.imgThumb
+          : imgThumb // ignore: cast_nullable_to_non_nullable
+              as String?,
       shop_description: freezed == shop_description
           ? _value.shop_description
           : shop_description // ignore: cast_nullable_to_non_nullable
@@ -108,6 +122,8 @@ abstract class _$$_MyModelCopyWith<$Res> implements $MyModelCopyWith<$Res> {
       int? shop_id,
       String? name,
       String? description,
+      String? imgFull,
+      String? imgThumb,
       String? shop_description});
 }
 
@@ -126,6 +142,8 @@ class __$$_MyModelCopyWithImpl<$Res>
     Object? shop_id = freezed,
     Object? name = freezed,
     Object? description = freezed,
+    Object? imgFull = freezed,
+    Object? imgThumb = freezed,
     Object? shop_description = freezed,
   }) {
     return _then(_$_MyModel(
@@ -149,6 +167,14 @@ class __$$_MyModelCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      imgFull: freezed == imgFull
+          ? _value.imgFull
+          : imgFull // ignore: cast_nullable_to_non_nullable
+              as String?,
+      imgThumb: freezed == imgThumb
+          ? _value.imgThumb
+          : imgThumb // ignore: cast_nullable_to_non_nullable
+              as String?,
       shop_description: freezed == shop_description
           ? _value.shop_description
           : shop_description // ignore: cast_nullable_to_non_nullable
@@ -166,6 +192,8 @@ class _$_MyModel implements _MyModel {
       this.shop_id,
       this.name,
       this.description,
+      this.imgFull,
+      this.imgThumb,
       this.shop_description});
 
   factory _$_MyModel.fromJson(Map<String, dynamic> json) =>
@@ -182,11 +210,15 @@ class _$_MyModel implements _MyModel {
   @override
   final String? description;
   @override
+  final String? imgFull;
+  @override
+  final String? imgThumb;
+  @override
   final String? shop_description;
 
   @override
   String toString() {
-    return 'MyModel(id: $id, shop: $shop, shop_id: $shop_id, name: $name, description: $description, shop_description: $shop_description)';
+    return 'MyModel(id: $id, shop: $shop, shop_id: $shop_id, name: $name, description: $description, imgFull: $imgFull, imgThumb: $imgThumb, shop_description: $shop_description)';
   }
 
   @override
@@ -200,14 +232,17 @@ class _$_MyModel implements _MyModel {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
+            (identical(other.imgFull, imgFull) || other.imgFull == imgFull) &&
+            (identical(other.imgThumb, imgThumb) ||
+                other.imgThumb == imgThumb) &&
             (identical(other.shop_description, shop_description) ||
                 other.shop_description == shop_description));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, shop, shop_id, name, description, shop_description);
+  int get hashCode => Object.hash(runtimeType, id, shop, shop_id, name,
+      description, imgFull, imgThumb, shop_description);
 
   @JsonKey(ignore: true)
   @override
@@ -230,6 +265,8 @@ abstract class _MyModel implements MyModel {
       final int? shop_id,
       final String? name,
       final String? description,
+      final String? imgFull,
+      final String? imgThumb,
       final String? shop_description}) = _$_MyModel;
 
   factory _MyModel.fromJson(Map<String, dynamic> json) = _$_MyModel.fromJson;
@@ -244,6 +281,10 @@ abstract class _MyModel implements MyModel {
   String? get name;
   @override
   String? get description;
+  @override
+  String? get imgFull;
+  @override
+  String? get imgThumb;
   @override
   String? get shop_description;
   @override
